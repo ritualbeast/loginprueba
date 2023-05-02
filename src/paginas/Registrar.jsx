@@ -4,11 +4,17 @@ import { NavLink } from 'react-router-dom'
 
 
 const Registrar = () => {
+  const [nombre , setNombre] = useState('')
+  const [email , setEmail] = useState('')
+  const [password , setPassword] = useState('')
+  const [ repetirPassword , setRepetirPassword] = useState('')
+
+
   return (
     
     <div>
       <h1 className="text-sky-700 font-black text-6xl">
-        Inicia sesion y administra tus <span className='text-slate-700'>proyectos</span>
+        Registrate y administra tus <span className='text-slate-700'>proyectos</span>
       </h1>
       <form className='mt-5'>
         <div className='mb-4'>
@@ -18,6 +24,8 @@ const Registrar = () => {
             id='nombre'
             type='text'
             placeholder='Nombre'
+            value={nombre}
+            onChange={e => setNombre(e.target.value)}
           />
           <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='email'>Email</label>
           <input
@@ -25,6 +33,9 @@ const Registrar = () => {
             id='email'
             type='email'
             placeholder='Email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+
           />
           <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='password'>Password</label>
           <input
@@ -32,6 +43,8 @@ const Registrar = () => {
             id='password'
             type='password'
             placeholder='Password de registro'
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
           <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='confirmar'>Confirmar Password</label>
           <input
@@ -39,6 +52,8 @@ const Registrar = () => {
             id='confirmar'
             type='password'
             placeholder='Confirmar Password de registro'
+            value={repetirPassword}
+            onChange={e => setRepetirPassword(e.target.value)}
           />
 
 
@@ -51,7 +66,7 @@ const Registrar = () => {
       </form>
       <nav className='mt-5'>
         <NavLink to='/olvide-password' className='text-sm text-sky-500 hover:text-sky-700'>Olvide mi password</NavLink>
-        <NavLink to='/registrar' className='ml-5 text-sm text-sky-500 hover:text-sky-700'>Crear una cuenta nueva</NavLink>
+        <NavLink to='/' className='ml-5 text-sm text-sky-500 hover:text-sky-700'>Ya tienes una cuenta?</NavLink>
       </nav>
     </div>
   )

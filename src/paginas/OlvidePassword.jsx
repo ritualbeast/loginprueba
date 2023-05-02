@@ -1,9 +1,36 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const OlvidePassword = () => {
   return (
+    
     <div>
-        <h1>Desde OlvidePassword</h1>
+      <h1 className="text-sky-700 font-black text-6xl">
+        Recupera tu <span className='text-slate-700'>password</span>
+      </h1>
+      <form className='mt-5'>
+        <div className='mb-4'>
+          
+          <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='email'>Email</label>
+          <input
+            className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            id='email'
+            type='email'
+            placeholder='Email'
+          />
+         
+
+          <input
+            className=' w-full bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 mt-5 rounded focus:outline-none focus:shadow-outline'
+            type='submit'
+            value='Enviar'
+          />
+        </div>
+      </form>
+      <nav className='mt-5'>
+        <NavLink to='/olvide-password' className='text-sm text-sky-500 hover:text-sky-700'>Olvide mi password</NavLink>
+        <NavLink to='/' className='ml-5 text-sm text-sky-500 hover:text-sky-700'>Ya tienes una cuenta?</NavLink>
+      </nav>
     </div>
   )
 }
